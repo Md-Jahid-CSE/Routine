@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semester Final Routine Poll</title>
+  <style>
+    /* Reset and general styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 20px;
+      background-color: #2b2b2b;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      border: 1px solid #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px #00f;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+    .poll-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .poll-group {
+      background-color: #252525;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #444;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .poll-group:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 255, 255, 0.5);
+    }
+    .poll-group h3 {
+      text-align: center;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff;
+      margin-bottom: 10px;
+    }
+    .poll-group label {
+      display: block;
+      margin: 8px 0;
+      color: #ddd;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+      accent-color: #0ff;
+    }
+    .submit-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background-color: #ff007f;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.6);
+  transition: background 0.3s, box-shadow 0.3s;
+  margin-top: 20px; /* Add this line to move the button down */
+}
+
+.submit-button:hover {
+  background-color: #ff4da6;
+  box-shadow: 0 8px 30px rgba(255, 0, 127, 0.9);
+}
+
+    #results {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #252525;
+      border-radius: 10px;
+      border: 1px solid #444;
+      box-shadow: 0 4px 15px rgba(255, 255, 0, 0.2);
+    }
+    #resultList {
+      list-style-type: none;
+      padding: 0;
+    }
+    #resultList li {
+      margin: 8px 0;
+      padding: 5px 0;
+      border-bottom: 1px solid #555;
+      color: #ff0;
+    }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .poll-options {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Semester Final Routine Poll</h1>
+    <p class="subtitle">Created by Jahid (Section: C)</p>
+    <form id="pollForm">
+      <div class="poll-options">
+        <div class="poll-group">
+          <h3>Date: 23/12/2024</h3>
+          <label><input type="radio" name="date_23_12" value="CSE1101" required> CSE1101</label>
+          <label><input type="radio" name="date_23_12" value="EEE1163"> EEE1163</label>
+          <label><input type="radio" name="date_23_12" value="MATH1141"> MATH1141</label>
+          <label><input type="radio" name="date_23_12" value="PHY1131"> PHY1131</label>
+          <label><input type="radio" name="date_23_12" value="ENG1127"> ENG1127</label>
+        </div>
+        <div class="poll-group">
+          <h3>Date: 30/12/2024</h3>
+          <label><input type="radio" name="date_30_12" value="CSE1101" required> CSE1101</label>
+          <label><input type="radio" name="date_30_12" value="EEE1163"> EEE1163</label>
+          <label><input type="radio" name="date_30_12" value="MATH1141"> MATH1141</label>
+          <label><input type="radio" name="date_30_12" value="PHY1131"> PHY1131</label>
+          <label><input type="radio" name="date_30_12" value="ENG1127"> ENG1127</label>
+        </div>
+        <div class="poll-group">
+          <h3>Date: 02/01/2025</h3>
+          <label><input type="radio" name="date_02_01" value="CSE1101" required> CSE1101</label>
+          <label><input type="radio" name="date_02_01" value="EEE1163"> EEE1163</label>
+          <label><input type="radio" name="date_02_01" value="MATH1141"> MATH1141</label>
+          <label><input type="radio" name="date_02_01" value="PHY1131"> PHY1131</label>
+          <label><input type="radio" name="date_02_01" value="ENG1127"> ENG1127</label>
+        </div>
+        <div class="poll-group">
+          <h3>Date: 06/01/2025</h3>
+          <label><input type="radio" name="date_06_01" value="CSE1101" required> CSE1101</label>
+          <label><input type="radio" name="date_06_01" value="EEE1163"> EEE1163</label>
+          <label><input type="radio" name="date_06_01" value="MATH1141"> MATH1141</label>
+          <label><input type="radio" name="date_06_01" value="PHY1131"> PHY1131</label>
+          <label><input type="radio" name="date_06_01" value="ENG1127"> ENG1127</label>
+        </div>
+        <div class="poll-group">
+          <h3>Date: 09/01/2025</h3>
+          <label><input type="radio" name="date_09_01" value="CSE1101" required> CSE1101</label>
+          <label><input type="radio" name="date_09_01" value="EEE1163"> EEE1163</label>
+          <label><input type="radio" name="date_09_01" value="MATH1141"> MATH1141</label>
+          <label><input type="radio" name="date_09_01" value="PHY1131"> PHY1131</label>
+          <label><input type="radio" name="date_09_01" value="ENG1127"> ENG1127</label>
+        </div>
+      </div>
+      <button type="submit" class="submit-button">Submit Vote</button>
+    </form>
+    <div id="results">
+      <h2>Poll Results:</h2>
+      <ul id="resultList"></ul>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs, query, where } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCNkGkGOn3bObp6xJmxDBQmnJHWz73PcI0",
+        authDomain: "final-exam-pool.firebaseapp.com",
+        databaseURL: "https://final-exam-pool-default-rtdb.firebaseio.com",
+        projectId: "final-exam-pool",
+        storageBucket: "final-exam-pool.firebasestorage.app",
+        messagingSenderId: "58102380085",
+        appId: "1:58102380085:web:f4e3acb6656eb263eee37c"
+};
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const pollForm = document.getElementById("pollForm");
+    const resultList = document.getElementById("resultList");
+
+    pollForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = prompt("Please enter your Gmail ID to vote:");
+      if (!email || !email.includes("@gmail.com")) {
+        alert("Please enter a valid Gmail ID.");
+        return;
+      }
+
+      const querySnapshot = await getDocs(query(collection(db, "pollVotes"), where("email", "==", email)));
+      if (!querySnapshot.empty) {
+        alert("You have already voted using this Gmail ID.");
+        return;
+      }
+
+      const formData = new FormData(pollForm);
+      const pollData = { email: email };
+      formData.forEach((value, key) => {
+        pollData[key] = value;
+      });
+
+      await addDoc(collection(db, "pollVotes"), pollData);
+      alert("Your vote has been recorded.");
+      displayResults();
+    });
+
+    async function displayResults() {
+      const querySnapshot = await getDocs(collection(db, "pollVotes"));
+      const results = {};
+
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        Object.entries(data).forEach(([key, value]) => {
+          if (key !== "email") {
+            results[key] = results[key] || {};
+            results[key][value] = (results[key][value] || 0) + 1;
+          }
+        });
+      });
+
+      resultList.innerHTML = "";
+      Object.entries(results).forEach(([date, subjects]) => {
+        const dateItem = document.createElement("li");
+        dateItem.textContent = `Date: ${date}`;
+        const subjectList = document.createElement("ul");
+
+        Object.entries(subjects).forEach(([subject, count]) => {
+          const subjectItem = document.createElement("li");
+          subjectItem.textContent = `${subject}: ${count} votes`;
+          subjectList.appendChild(subjectItem);
+        });
+
+        dateItem.appendChild(subjectList);
+        resultList.appendChild(dateItem);
+      });
+    }
+
+    displayResults();
+  </script>
+</body>
+</html>
